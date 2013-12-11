@@ -1,6 +1,20 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.15'
+gem 'mongoid'
+gem 'bson_ext'
+gem 'wirb'
+gem 'hirb'
+gem 'awesome_print'
+gem 'rails_admin'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'simple_form'
+gem "twitter-bootstrap-rails"
+
+group :development, :test do
+  gem 'jazz_hands' #
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
