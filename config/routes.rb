@@ -1,4 +1,7 @@
 Forum::Application.routes.draw do
+  resources :topics
+
+
   resources :users
 
 
