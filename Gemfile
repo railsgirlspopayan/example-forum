@@ -6,12 +6,9 @@ gem 'bson_ext'
 gem 'wirb'
 gem 'hirb'
 gem 'awesome_print'
-gem 'rails_admin'
 gem 'haml-rails'
-gem 'jquery-rails'
-gem 'simple_form'
-gem "twitter-bootstrap-rails"
 
+gem 'bootstrap-sass', '~> 3.0.1.0.rc' # must specify version
 group :development, :test do
   gem 'jazz_hands' #
 end
