@@ -4,4 +4,5 @@ class Topic
   field :description, type: String
 
   belongs_to :user
+  has_many :posts
 end
