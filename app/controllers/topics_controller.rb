@@ -41,6 +41,7 @@ class TopicsController < ApplicationController
   # POST /topics.json
   def create
     @topic = Topic.new(params[:topic])
+    @topic.user = current_user # create the association between current user when the Topic is created
 
     respond_to do |format|
       if @topic.save
