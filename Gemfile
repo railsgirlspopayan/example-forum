@@ -7,6 +7,7 @@ gem 'wirb'
 gem 'hirb'
 gem 'awesome_print'
 gem 'haml-rails'
+gem 'quiet_assets'
 
 gem 'bootstrap-sass', '~> 3.0.1.0.rc' # must specify version
 group :development, :test do
