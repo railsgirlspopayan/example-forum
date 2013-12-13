@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all
+    @topic = Topic.new
 
     respond_to do |format|
       format.html # index.html.erb
