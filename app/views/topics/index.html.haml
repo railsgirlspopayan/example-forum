@@ -1,21 +1,30 @@
-%h1 Listing topics
+-content_for(:sidebar) do
+  = link_to 'New Topic', new_topic_path, class: 'btn btn-primary btn-lg'
 
-%table
+%h1 Listing Topics
+%br
+%br
+
+%table.table.table-hover
   %tr
+    %th Author
     %th Title
-    %th Description
+    %th Created at
+    %th Posts
+    %th Last Post
     %th
     %th
     %th
 
   - @topics.each do |topic|
     %tr
+      %td= topic.user.name
       %td= topic.title
-      %td= topic.description
+      %td= topic.created_at
+      %td= topic.posts.count
+      %td= topic.last_post
       %td= link_to 'Show', topic
       %td= link_to 'Edit', edit_topic_path(topic)
       %td= link_to 'Destroy', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Topic', new_topic_path

@@ -15,9 +15,7 @@
 /tmp
 
 # ignore
-doc/
-lib/
-log/
-public/
-vendor/
+doc/*
+public/*
+
 
