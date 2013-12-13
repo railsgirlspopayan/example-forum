@@ -1,5 +1,7 @@
 -content_for(:sidebar) do
-  = link_to 'New Topic', new_topic_path, class: 'btn btn-primary btn-lg'
+  / Button trigger modal
+  = button_tag 'New Topic', class: 'btn btn-primary btn-lg', "data-target" => "#myModal", "data-toggle" => "modal"
+  = render 'form_new'
 
 %h1 Listing Topics
 %br
