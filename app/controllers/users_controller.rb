@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout 'signin', only:[:new]
+
   # GET /users
   # GET /users.json
   def index
