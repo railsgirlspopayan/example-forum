@@ -10,26 +10,33 @@
         .container
           .navbar-header
             %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            %a.navbar-brand{href: "#"} Project name
+            %a.navbar-brand{href: "#"} Forum Project
           .collapse.navbar-collapse
-            %ul.nav.navbar-nav
-              %li.active
-                %a{href: "#"} Home
+            %ul.nav.navbar-nav.navbar-right
               %li
-                %a{href: "#about"} About
-              %li
-                %a{href: "#contact"} Contact
+                %a{href: "#contact"} Log Out
           / /.nav-collapse
       .container
-        .starter-template
-          %h1 Bootstrap starter template
+        .jumbotron.text-center
+          %h1='Rails Girls Popayán'
+          .row
+            .col-xs-6.col-md-3
+              = link_to '#', class: 'thumbnail' do
+                =image_tag 'image1.png', {alt: 'image1', 'data-src'=> 'holder.js/100%x223' }
+            .col-xs-6.col-md-3
+              = link_to '#', class: 'thumbnail' do
+                =image_tag 'image2.png', {alt: 'image2', 'data-src'=> 'holder.js/100%x223' }
+            .col-xs-6.col-md-3
+              = link_to '#', class: 'thumbnail' do
+                =image_tag 'image1.png', {alt: 'image1', 'data-src'=> 'holder.js/100%x223' }
+            .col-xs-6.col-md-3
+              = link_to '#', class: 'thumbnail' do
+                =image_tag 'image2.png', {alt: 'image2', 'data-src'=> 'holder.js/100%x223' }
           %p.lead
             Use this document as a way to quickly start any new project.
             %br/
             All you get is this text and a mostly barebones HTML document.
-        .row
-          = yield
+        .main-content
+          .row
+            .col-xs-6.col-md-3
+              = yield
