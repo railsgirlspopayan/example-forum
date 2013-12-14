@@ -59,6 +59,9 @@ class TopicsController < ApplicationController
   # PUT /topics/1.json
   def update
     @topic = Topic.find(params[:id])
+    post_attributes = params[:topic][:post].merge(user: current_user) # add the user
+
+    @topic.posts.create(post_attributes)
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
