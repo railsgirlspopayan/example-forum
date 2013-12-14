@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    session[:id]= {} # remove the user id to the rails session
 
     respond_to do |format|
       format.html # index.html.erb
