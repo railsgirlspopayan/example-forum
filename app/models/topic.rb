@@ -4,8 +4,12 @@ class Topic
   field :title, type: String
   field :description, type: String
 
+  # relationships
+
   belongs_to :user
   has_many :posts
+
+  accepts_nested_attributes_for :posts, :user
 
   # Class Methods
 
