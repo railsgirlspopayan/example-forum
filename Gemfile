@@ -9,7 +9,7 @@ gem 'awesome_print'
 gem 'haml-rails'
 gem 'quiet_assets'
 
-gem 'bootstrap-sass', '~> 3.0.1.0.rc' # must specify version
+gem 'bootstrap-sass', '~> 3.0.3' # must specify version
 group :development, :test do
   gem 'jazz_hands' #
 end
