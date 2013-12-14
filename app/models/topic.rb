@@ -20,6 +20,6 @@ class Topic
 
   # @return [Date] with the date of the last post
   def last_post
-    self.posts.last.try(:created_at)
+    self.posts.last.try(:created_at).try(:to_date)
   end
 end
