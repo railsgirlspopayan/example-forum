@@ -39,6 +39,14 @@
         .main-content
           .row
             .col-xs-12.col-sm-9
+              - if notice or alert or flash[:error]
+                #flash-messages
+                  - if notice
+                    %p.text-success= notice
+                  - if alert
+                    %p.text-warning= alert
+                  - if flash[:error]
+                    %p.text-danger= flash[:error]
               = yield
             .col-xs-6.col-sm-3
               .sidebar
