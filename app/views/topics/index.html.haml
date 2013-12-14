@@ -18,8 +18,8 @@
           .col-xs-9.col-md-9.section-box
             %h2
               =link_to topic.title, topic_path(topic), class: 'btn-link'
-              -#%a{href: "http://bootsnipp.com/", target: "_blank"}
-                %span.glyphicon.glyphicon-new-window
+            %p
+              %span=topic.user.try(:name)
             %p
               %span= 'created at:'
               %span=topic.created_at.to_date

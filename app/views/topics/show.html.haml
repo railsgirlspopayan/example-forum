@@ -12,6 +12,7 @@
         %h3=@topic.title
       %th
       %th.text-right
+        %h6=@topic.user.try(:name)
         %h6="created at #{@topic.created_at.to_date}"
     %tr.active
       %td{colspan: 3}=@topic.description
@@ -19,7 +20,11 @@
   %h4 Posts
   -@topic.posts.each do |post|
     .col-md-8
-      %p=post.body
+      .row
+        .col-md-2
+          = post.user.try(:name)
+        .col-md-8
+          %p=post.body
     .col-md-3
       ="posted #{post.created_at.to_date}"
     .col-md-1
