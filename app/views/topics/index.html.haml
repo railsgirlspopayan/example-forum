@@ -1,32 +1,37 @@
 -content_for(:sidebar) do
   / Button trigger modal
-  = button_tag 'New Topic', class: 'btn btn-primary btn-lg', "data-target" => "#myModal", "data-toggle" => "modal"
-  = render 'form_new'
-
+  .well
+    = button_tag 'New Topic', class: 'btn btn-primary btn-lg', "data-target" => "#myModal", "data-toggle" => "modal"
+    = render 'form_new'
 %h1 Listing Topics
 %br
 %br
 
-%table.table.table-hover
-  %tr
-    %th Author
-    %th Title
-    %th Created at
-    %th Posts
-    %th Last Post
-    %th
-    %th
-    %th
-
-  - @topics.each do |topic|
-    %tr
-      %td= topic.user.name
-      %td= topic.title
-      %td= topic.created_at
-      %td= topic.posts.count
-      %td= topic.last_post
-      %td= link_to 'Show', topic
-      %td= link_to 'Edit', edit_topic_path(topic)
-      %td= link_to 'Destroy', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-
+.container
+- @topics.each do |topic|
+  .row
+    .col-md-12
+      .well.well-sm
+        .row
+          .col-xs-3.col-md-3.text-center
+            =image_tag "apple-touch-icon-114x114-precomposed.png", class: 'img img-rounded img-responsive'
+          .col-xs-9.col-md-9.section-box
+            %h2
+              =link_to topic.title, topic_path(topic), class: 'btn-link'
+              -#%a{href: "http://bootsnipp.com/", target: "_blank"}
+                %span.glyphicon.glyphicon-new-window
+            %p
+              %span= 'created at:'
+              %span=topic.created_at.to_date
+            %p
+              =topic.description
+            %hr/
+            .row.rating-desc
+              .col-md-12
+                %span.separator
+                = succeed " #{topic.posts.count} posts" do
+                  %span.glyphicon.glyphicon-comment
+                %span.separator
+                  = link_to 'Edit', edit_topic_path(topic), class: 'glyphicon glyphicon-edit btn-link'
+                %span.separator
+                  =link_to 'Del', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'glyphicon glyphicon-trash btn-link'
