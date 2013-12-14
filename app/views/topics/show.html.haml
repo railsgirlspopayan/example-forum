@@ -1,12 +1,27 @@
-%p#notice= notice
+-content_for(:sidebar) do
+  / Button trigger modal
+  = button_tag 'New Post', class: 'btn btn-primary btn-lg', "data-target" => "#post", "data-toggle" => "modal"
+  = render 'posts/form_new'
 
-%p
-  %b Title:
-  = @topic.title
-%p
-  %b Description:
-  = @topic.description
+%table.table.table-hover
+  %tr
+    %th Title
+    %th Description
+    %th Created at
+  %tr
+    %td= @topic.title
+    %td= @topic.description
+    %td= @topic.created_at.to_date
 
-= link_to 'Edit', edit_topic_path(@topic)
-\|
-= link_to 'Back', topics_path
+  -@topic.posts.each do |post|
+    %tr
+      %table.table
+        %tr
+          %th=post.user.try(:name)
+          %th=post.created_at.to_date
+          %th
+          %th
+        %tr
+          %td=post.body
+          %td= link_to 'Edit', edit_post_path(post)
+          %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
