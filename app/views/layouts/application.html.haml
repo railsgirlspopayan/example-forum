@@ -10,11 +10,11 @@
         .container
           .navbar-header
             %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
-            %a.navbar-brand{href: "#"} Forum Project
+            = link_to 'Forum Project', topics_path, class: 'navbar-brand'
           .collapse.navbar-collapse
             %ul.nav.navbar-nav.navbar-right
               %li
-                %a{href: "#contact"} Log Out
+                =link_to 'Log Out', new_user_path
           / /.nav-collapse
       .container
         .jumbotron.text-center
